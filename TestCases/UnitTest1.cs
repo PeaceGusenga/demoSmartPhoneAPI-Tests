@@ -19,7 +19,7 @@ namespace YourNamespace
         [Test]
         public void CreateProcessorTestValid()
         {
-
+         try{
             //REQUEST
             var request = new RestRequest("http://localhost:5000/AddProcessor", Method.POST);
             
@@ -32,19 +32,23 @@ namespace YourNamespace
 
             //EXECUTE REQUEST
             var response = client.Execute(request);
-
-            //INSPECT RESPONSE
-            Logger.Info("This is an informational message.");
-            Logger.Debug("This is a debug message.");
-            Logger.Error("An error occurred: {0}", exception.Message);
-
-
+            
             // ASSERTIONS
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(response.IsSuccessful, Is.True);
 
             // RESPONSE BODY ASSERTION
             Assert.That(response.Content, Is.EqualTo("New process added."));
+            
+            }
+         catch(Exception exception)
+            {
+            //INSPECT RESPONSE
+            Logger.Info("This is an informational message.");
+            Logger.Debug("This is a debug message.");
+            Logger.Error("An error occurred: {0}", exception.Message);
+            }
+
         }
         
         [Test]

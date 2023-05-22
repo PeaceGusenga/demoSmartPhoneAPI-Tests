@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Desktop/Projects/demoSmartphoneAPI/demoSmartphoneAPI/QA/TestCases/TestCases.csproj": {}
+    "/Users/user/Desktop/Projects/demoSmartPhoneAPI-Tests/TestCases/TestCases.csproj": {}
   },
   "projects": {
-    "/Users/user/Desktop/Projects/demoSmartphoneAPI/demoSmartphoneAPI/QA/TestCases/TestCases.csproj": {
+    "/Users/user/Desktop/Projects/demoSmartPhoneAPI-Tests/TestCases/TestCases.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Desktop/Projects/demoSmartphoneAPI/demoSmartphoneAPI/QA/TestCases/TestCases.csproj",
+        "projectUniqueName": "/Users/user/Desktop/Projects/demoSmartPhoneAPI-Tests/TestCases/TestCases.csproj",
         "projectName": "TestCases",
-        "projectPath": "/Users/user/Desktop/Projects/demoSmartphoneAPI/demoSmartphoneAPI/QA/TestCases/TestCases.csproj",
+        "projectPath": "/Users/user/Desktop/Projects/demoSmartPhoneAPI-Tests/TestCases/TestCases.csproj",
         "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Desktop/Projects/demoSmartphoneAPI/demoSmartphoneAPI/QA/TestCases/obj/",
+        "outputPath": "/Users/user/Desktop/Projects/demoSmartPhoneAPI-Tests/TestCases/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -44,6 +44,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.1.4, )"
             },
             "NUnit": {
               "target": "Package",
