@@ -7,15 +7,24 @@ public class TestCase2
     [SetUp]
     public void Setup()
     {
-        //RestSharp client instance
-        client = new RestClient("https://localhost:5001");
+        string baseURL1 = "https://localhost:5001";
+        string baseURL2 = "http://localhost:5000";
+        
+        //CREATE RESTSHARP REST CLIENT INSTANCE
+        client = new RestClient(baseURL1);
+
+        //SETUP LOGS
+        NLog.LogManager.LoadConfiguration("nlog.config");
     }
 
     [Test]
-    public void TestAPI()
+    public void GetAllProcessors()
     {
+        //ENDPOINT
+        string endpoint = "/GetAllProcessors";
+
         //CREATE REQUEST INSTANCE
-        RestRequest request = new RestRequest("/GetAllProcessors", Method.GET);
+        RestRequest request = new RestRequest(endpoint, Method.GET);
 
         //HEADER
         request.AddHeader("accept", "text/plain");

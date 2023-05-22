@@ -1,4 +1,4 @@
-namespace YourNamespace
+namespace TestCases
 {
     [TestFixture]
     public class TestCase1
@@ -6,40 +6,46 @@ namespace YourNamespace
         private RestClient client;
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
+
         [SetUp]
         public void Setup()
         {
+            string baseURL = "https://localhost:5001";
             //CREATE RESTSHARP REST CLIENT INSTANCE
-            client = new RestClient("http://localhost:5000");
+            client = new RestClient(baseURL);
 
             //SETUP LOGS
             NLog.LogManager.LoadConfiguration("nlog.config");
+
         }
 
         [Test]
         public void CreateProcessorTestValid()
         {
          try{
+
+            //RESOURCE
+            string endpoint = "/AddProcessor";
+
             //REQUEST
-            var request = new RestRequest("http://localhost:5000/AddProcessor", Method.POST);
+            var request = new RestRequest(endpoint, Method.POST);
             
             //HEADER
-            request.AddHeader("accept", "*/*");
             request.AddHeader("Content-Type", "application/json");
 
             //BODY
-            request.AddJsonBody(new { ProcessorID = "0", ProcessorName = "TestProcessor" });
+            request.AddJsonBody(new { processorID = 0, processorName = "TestProcessor" });
 
             //EXECUTE REQUEST
             var response = client.Execute(request);
             
             // ASSERTIONS
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(response.IsSuccessful, Is.True);
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
 
             // RESPONSE BODY ASSERTION
             Assert.That(response.Content, Is.EqualTo("New process added."));
-            
+
             }
          catch(Exception exception)
             {
@@ -63,7 +69,7 @@ namespace YourNamespace
             request.AddHeader("Content-Type", "application/json");
 
             //BODY
-            request.AddJsonBody(new { ProcessorID = "-100", ProcessorName = "$$$@#$#@!$asdasvjhbqwe"});
+            request.AddJsonBody(new { processorID = -100, processorName = "$$$@#$#@!$asdasvjhbqwe"});
 
             //EXECUTE REQUEST
             var response = client.Execute(request);
@@ -85,7 +91,7 @@ namespace YourNamespace
             request.AddHeader("Content-Type", "application/json");
 
             //BODY
-            request.AddJsonBody(new { ProcessorID = "100", ProcessorName = "$$$@#$#@!$asdasvjhbqwe"});
+            request.AddJsonBody(new { ProcessorID = 100, ProcessorName = "$$$@#$#@!$asdasvjhbqwe"});
 
             //EXECUTE REQUEST
             var response = client.Execute(request);

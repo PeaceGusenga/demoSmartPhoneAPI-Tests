@@ -10,7 +10,7 @@ Test Objectives
 > Validate API security measures (if applicable).
 
 Test Scope
-> API Endpoints to be tested:
+API Endpoints to be tested:
 < /AddProcessors
 > /GetAllProcessors
 > /GetAllBrands
