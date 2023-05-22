@@ -1,0 +1,7 @@
+22:45:51.188 [main]  INFO  com.intuit.karate - Karate version: 1.4.0-SNAPSHOT
+22:46:05.395 [main]  INFO  c.intuit.karate.core.FeatureRuntime - found scenario at line: 6
+22:46:44.173 [main]  ERROR com.intuit.karate - Test/Test Cases/karate-api-project/src/test/java/smartphone/api/getAllBrands.feature:4
+* configure read('karate-config.js')
+no step-definition method match found for: configure read('karate-config.js')
+Test/Test Cases/karate-api-project/src/test/java/smartphone/api/getAllBrands.feature:4
+22:47:09.951 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) Test/Test Cases/karate-api-project/src/test/java/smartphone/api/getAllBrands.feature

@@ -1,7 +1,7 @@
 Feature: Test /AddProcessors endpoint
 
 Background:
-    * configure read('karate-config.js')
+    * url 'https://localhost:5002'
 
 Scenario: Add new Processor
     * def payload1 =
@@ -16,7 +16,7 @@ Scenario: Add new Processor
 
     * json mypayload1 = payload1
 
-    Given url baseUrl + endpoints.addProcessors
+    Given path '/AddProcessors'
     And request mypayload1
     When method POST
     Then status 201
@@ -35,7 +35,7 @@ Scenario: Add Invalid Processor
 
     * json mypayload1 = payload1
 
-    Given url baseUrl + endpoints.addProcessors
+    Given path '/AddProcessors'
     And request mypayload1
     When method POST
     Then status 201

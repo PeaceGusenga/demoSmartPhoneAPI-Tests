@@ -1,15 +1,15 @@
 Feature: Test /GetAllSmartPhones enpoint
 
 Background:
-    * configure read('karate-config.js')
+    * url 'https://localhost:5002'
 
 Scenario: Verify Response Status Code
-    Given url baseUrl + endpoints.getAllSmartphones
+    Given path '/GetAllSmartphones'
     When method get
     Then status 200
 
 Scenario: Verify Response Body has Expected Structure
-    Given url baseUrl + endpoints.getAllSmartphones
+    Given path '/GetAllSmartphones'
     When method get
     Then status 200
     And match response == 
@@ -35,7 +35,7 @@ Scenario: Verify Response Body has Expected Structure
     """
 
 Scenario: Verify Specific Response
-    Given url baseUrl + endpoints.getAllSmartphones
+    Given path '/GetAllSmartphones'
     When method get
     Then status 200
     And match response contains 
