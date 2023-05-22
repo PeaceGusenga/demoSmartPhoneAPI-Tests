@@ -19,14 +19,13 @@ API Endpoints to be tested:
 Test Environment
 > Operating System: Mac, Windows, or Linux
 > Development Environment: Visual Studio Code
+> Programming Language: JavaScript
 > Framework and Dependencies:
->.NET Core SDK 
-> RestSharp library
-> NUnit testing framework  
-> JSON.NET library
+> Karate API
+> Maven
 
 Test Approach and Methodology
-> Automated API testing using RestSharp and C#
+> Automated API testing using Karate API and JavaScript
 > Test-driven development (TDD) approach
 > Unit tests for individual API methods
 > Integration tests for API endpoints
@@ -53,10 +52,10 @@ Test Data
 > Dynamic test data generation for data-driven testing
 
 Test Execution
-> Test Execution Approach: Automated test execution using the NUnit testing framework.
+> Test Execution Approach: Automated test execution using the Junit testing framework.
 > Test Execution Steps:
 > Set up the test environment (e.g., start the API server, Docker containers if applicable).
-> Execute the test cases using the NUnit test runner or the dotnet test command.
+> Execute the test cases using the Java test runner or the npm command.
 > Capture and log test results, including any failures or errors.
 > Tear down the test environment (e.g., stop the API server, clean up any test data or containers).
 
